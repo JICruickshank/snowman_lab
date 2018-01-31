@@ -29,6 +29,7 @@ class Game
     return false
   end
 
+
   def hide_answer(answer)
 
     display_length = @answer.length
@@ -36,6 +37,7 @@ class Game
     return display
 
   end
+
 
   def replace_letter(guess)
 
@@ -54,6 +56,7 @@ class Game
     return @live_display
     end
 
+
   def lose_life(guess)
 
     while guess_true_or_false(guess) == false
@@ -66,6 +69,7 @@ class Game
     end
 
   end
+
 
   def winner
 
