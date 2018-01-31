@@ -15,6 +15,15 @@ class Game
 
     @guesses << guess
 
-  end    
+  end
+
+
+  def guess_true_or_false(guess)
+
+    for letter in @answer.split("")
+      return true if letter == guess
+    end
+    return false
+  end
 
 end

@@ -43,4 +43,12 @@ class TestGame < MiniTest::Test
 
     end
 
+    def test_guess_true_or_false__false
+
+      guess = "z"
+
+      assert_equal(false, @game.guess_true_or_false(guess))
+
+    end
+
 end
