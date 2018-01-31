@@ -7,6 +7,9 @@ class Game
     @player = player
     @answer = answer
     @guesses = []
+    @answer_letters = @answer.split("")
+    @display = "*" * (@answer.length)
+    @display_letters = @display.split("")
 
   end
 
@@ -24,6 +27,14 @@ class Game
       return true if letter == guess
     end
     return false
+  end
+
+  def hide_answer(answer)
+
+    display_length = @answer.length
+    display = "*" * (display_length)
+    return display
+
   end
 
 end

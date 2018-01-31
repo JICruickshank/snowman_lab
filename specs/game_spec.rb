@@ -51,4 +51,10 @@ class TestGame < MiniTest::Test
 
     end
 
+    def test_view_display
+
+      assert_equal("******", @game.hide_answer(@answer))
+
+    end
+
 end
