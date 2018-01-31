@@ -57,12 +57,17 @@ class Game
 
   def lose_life(guess)
 
-    if guess_true_or_false(guess) == false
-      @player.lives -= 1
+    while guess_true_or_false(guess) == false
+       if @player.lives > 0
+         @player.lives -= 1
+       end
+
+      return "Loser!"
+
     end
 
-
-
   end
+
+
 
 end

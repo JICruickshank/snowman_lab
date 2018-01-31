@@ -76,11 +76,14 @@ class TestGame < MiniTest::Test
 
     end
 
-    def test_loser
+    def  test_loser
 
-      assert_equal(0, @players.lives)
-
+      guess = "z"
+      @player.lives = 1
+      assert_equal("Loser!", @game.lose_life(guess))
 
     end
+
+
 
 end
