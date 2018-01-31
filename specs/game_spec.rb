@@ -18,4 +18,29 @@ class TestGame < MiniTest::Test
 
   end
 
+  def test_game_has_answer
+
+    assert_equal("cheese", @game.answer())
+
+  end
+
+
+    def test_guess_goes_into_guesses
+
+      guess = "s"
+      @game.log_guess(guess)
+      guess = "c"
+      result = @game.log_guess(guess)
+      assert_equal(["s", "c"], result)
+
+    end
+
+    def test_guess_true_or_false__true
+
+      guess = "s"
+
+      assert_equal(true, @game.guess_true_or_false(guess))
+
+    end
+
 end

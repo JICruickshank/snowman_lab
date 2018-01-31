@@ -10,4 +10,11 @@ class Game
 
   end
 
+
+  def log_guess(guess)
+
+    @guesses << guess
+
+  end    
+
 end
