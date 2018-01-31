@@ -19,4 +19,11 @@ class TestPlayer < MiniTest::Test
 
   end
 
+
+  def test_player_lives
+
+    assert_equal(6, @player1.lives())
+
+  end
+
 end
