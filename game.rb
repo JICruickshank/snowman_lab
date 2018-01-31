@@ -39,34 +39,6 @@ class Game
 
   def replace_letter(guess)
 
-    # if guess_true_or_false(guess)
-    #   for letter in @answer_letters
-    #     if letter == guess
-    #       position = letter.index
-    #     end
-    #   end
-    #
-    # end
-
-    # display_array = []
-    #
-    # for letter in @answer_letters
-    #   if letter != guess
-    #     # || @guesses.include?(guess) == false
-    #     letter = "*"
-    #
-    #   end
-    # end
-    # return @answer_letters
-
-
-    # for letter in @answer.split("")
-    #   if letter == guess
-    #     position = letter.index
-    #
-    #     @display_letters[position] = guess
-    #   end
-    # end
 
     @display_letters = @answer_letters
 
@@ -80,6 +52,16 @@ class Game
     end
     live_display = @display_letters.join("")
     return live_display
+
+  end
+
+  def lose_life(guess)
+
+    if guess_true_or_false(guess) == false
+      @player.lives -= 1
+    end
+
+
 
   end
 

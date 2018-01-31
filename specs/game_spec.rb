@@ -2,19 +2,22 @@ require("minitest/autorun")
 require("minitest/rg")
 
 require_relative("../game.rb")
+require_relative("../player.rb")
 
 class TestGame < MiniTest::Test
 
   def setup
 
-    @game = Game.new("J", "cheese")
+    @player = Player.new("J", 6)
+    @game = Game.new(@player, "cheese")
+
 
   end
 
 
   def test_game_has_player
 
-    assert_equal("J", @game.player())
+    assert_equal(@player, @game.player())
 
   end
 
@@ -62,6 +65,21 @@ class TestGame < MiniTest::Test
       guess = "s"
 
       assert_equal("****s*", @game.replace_letter(guess))
+
+    end
+
+    def test_false_guess_lose_life
+
+      guess = "x"
+      @game.lose_life(guess)
+      assert_equal(5, @player.lives)
+
+    end
+
+    def test_loser
+
+      assert_equal(0, @players.lives)
+
 
     end
 
