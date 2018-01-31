@@ -63,7 +63,7 @@ class TestGame < MiniTest::Test
     def test_true_guess_replace_letter
 
       guess = "s"
-
+      @game.replace_letter(guess)
       assert_equal("****s*", @game.replace_letter(guess))
 
     end
@@ -83,6 +83,13 @@ class TestGame < MiniTest::Test
       assert_equal("Loser!", @game.lose_life(guess))
 
     end
+
+    # def test_winner
+    #
+    #
+    #
+    #   assert_equal("Winner!", @game.winner)
+    # end
 
 
 

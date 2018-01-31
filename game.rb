@@ -46,14 +46,13 @@ class Game
       if letter != guess && !@guesses.include?(letter)
 
       letter.sub!(letter, '*')
-
       end
-
     end
-    live_display = @display_letters.join("")
-    return live_display
 
-  end
+    @live_display = @display_letters.join("")
+
+    return @live_display
+    end
 
   def lose_life(guess)
 
@@ -68,6 +67,14 @@ class Game
 
   end
 
+  def winner
+
+    if @live_display = @answer
+      return "Winner!"
+    end
+
+
+  end
 
 
 end
