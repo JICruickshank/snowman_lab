@@ -9,7 +9,7 @@ class Game
     @guesses = []
     @answer_letters = @answer.split("")
     @display = "*" * (@answer.length)
-    @display_letters = @display.split("")
+    @display_letters = []
 
   end
 
@@ -34,6 +34,52 @@ class Game
     display_length = @answer.length
     display = "*" * (display_length)
     return display
+
+  end
+
+  def replace_letter(guess)
+
+    # if guess_true_or_false(guess)
+    #   for letter in @answer_letters
+    #     if letter == guess
+    #       position = letter.index
+    #     end
+    #   end
+    #
+    # end
+
+    # display_array = []
+    #
+    # for letter in @answer_letters
+    #   if letter != guess
+    #     # || @guesses.include?(guess) == false
+    #     letter = "*"
+    #
+    #   end
+    # end
+    # return @answer_letters
+
+
+    # for letter in @answer.split("")
+    #   if letter == guess
+    #     position = letter.index
+    #
+    #     @display_letters[position] = guess
+    #   end
+    # end
+
+    @display_letters = @answer_letters
+
+    for letter in @display_letters
+      if letter != guess && !@guesses.include?(letter)
+
+      letter.sub!(letter, '*')
+
+      end
+
+    end
+    live_display = @display_letters.join("")
+    return live_display
 
   end
 

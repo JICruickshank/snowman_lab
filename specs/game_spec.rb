@@ -57,4 +57,12 @@ class TestGame < MiniTest::Test
 
     end
 
+    def test_true_guess_replace_letter
+
+      guess = "s"
+
+      assert_equal("****s*", @game.replace_letter(guess))
+
+    end
+
 end
